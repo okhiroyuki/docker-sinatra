@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get -q update
-RUN apt-get -y install ruby ruby-dev rubygems git
+RUN apt-get -y install ruby rubygems-integration git
 RUN git clone https://github.com/okhiroyuki/docker-sinatra.git /opt/sinatra/
 RUN gem install bundler
 EXPOSE 9292
