@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IP Address</title>
+</head>
+<body>
+<table border>
+  <% @ips.each do |ip| %>
+    <tr>
+      <td><%= ip.id %></td>
+      <td><%= ip.address %></td>
+      <td><%= ip.created_at %></td>
+      <form method="post" action="del">
+      <td><input type="submit" value="削除"></td>
+      <input type="hidden" name="id" value="<%= ip.id %>">
+      <input type="hidden" name="_method" value="delete">
+      </form>
+    </tr>
+  <% end %>
+</table>
+</body>
+</html>
