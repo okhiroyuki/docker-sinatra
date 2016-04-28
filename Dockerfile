@@ -10,4 +10,4 @@ WORKDIR /opt/sinatra
 RUN git pull && bundle install
 RUN bundle exec rake db:create
 RUN bundle exec rake db:migrate
-CMD ["bundle", "exec", "rackup"]
+CMD ["bundle", "exec", "rackup","config.ru"]
