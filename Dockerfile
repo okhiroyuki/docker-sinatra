@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Hiroyuki Okada <ok.okada.hiroyuki@gmail.com>
 RUN apt-get -qq update
-RUN apt-get -qqy install ruby ruby-dev rubygems-integration git libsqlite3-dev libgmp3-dev
+RUN apt-get -qqy install ruby ruby-dev rubygems-integration git libsqlite3-dev libgmp3-dev libsqlite3-ruby
 RUN git clone https://github.com/okhiroyuki/docker-sinatra.git /opt/sinatra/
 RUN gem install bundler
 EXPOSE 9292
