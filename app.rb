@@ -25,7 +25,6 @@ post '/new' , provides: :json do
   ip = Ip.new
   ip.address = params["address"]
   ip.save
-  redirect '/'
 end
 
 delete '/del' do
