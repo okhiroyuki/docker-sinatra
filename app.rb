@@ -13,16 +13,17 @@ get '/' do
   erb :index
 end
 
-get '/json' do
+get '/get' do
   content_type :json
   ip = Ip.limit(1).order(:created_at).reverse_order
   data = {address: ip[0].address}
   data.to_json
 end
 
-post '/new' do
+post '/new' , provides: :json do
+  params = JSON.parse(request.body.read)
   ip = Ip.new
-  ip.address = params[:address]
+  ip.address = params["address"]
   ip.save
   redirect '/'
 end
