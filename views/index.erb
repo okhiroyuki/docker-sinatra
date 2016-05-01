@@ -9,7 +9,7 @@
   <% @ips.each do |ip| %>
     <tr>
       <td><%= ip.id %></td>
-      <td><%= ip.address %></td>
+      <td><a href="http://<%= ip.address %>:1880"><%= ip.address %>:1880</a></td>
       <td><%= ip.created_at %></td>
       <form method="post" action="del">
       <td><input type="submit" value="削除"></td>
